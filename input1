@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+main()
+
+{
+
+char ch;
+
+printf("\nEnter Your Character .. : \n");
+scanf("%c\n",&ch);
+
+if(ch=='y'||ch=='n')
+printf("%c",ch)
+else
+puts("Enter Only Y or N");
+
+}
