@@ -1,27 +1,23 @@
-#include<stdio.h>
+#include <stdio.h>
 
- main()
+main()
 
 {
 
-int num,n,sum=0,i=0;
-int aver;
+  int num, n, sum = 0, i = 0;
+  int aver;
 
-puts("Enter for how many no.s you want to calclulate the average : ");
-scanf("%d",&n);
+  puts("Enter for how many no.s you want to calclulate the average : ");
+  scanf("%d", &n);
 
-while(i < n)
-{
-puts("Enter Your Nos. : ");
-scanf("%d",&num);
-sum+=num;
-i++;
+  while (i < n) {
+    puts("Enter Your Nos. : ");
+    scanf("%d", &num);
+    sum += num;
+    i++;
+  }
+
+  aver = sum / n;
+
+  printf("\nThe Average Is : %d", aver);
 }
-
-aver=sum/n;
-
-
-
-printf("\nThe Average Is : %d",aver);
-}
-

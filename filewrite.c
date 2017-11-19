@@ -1,40 +1,34 @@
 #include <stdio.h>
 
-main()
-{
+main() {
 
-FILE *pt;
+  FILE *pt;
 
-char alpha='Y';
+  char alpha = 'Y';
 
-struct emp 
-{
-char name[50];
-int age;
-int salary;
+  struct emp {
+    char name[50];
+    int age;
+    int salary;
+  };
+  struct emp e;
 
-};
-struct emp e;
+  pt = fopen("demo.dat", "wb");
 
-pt=fopen("demo.dat","wb");
+  if (pt == NULL) {
+    puts("\nFile Can't be Opened");
+    exit(0);
+  }
 
-if(pt==NULL)
-{
-puts("\nFile Can't be Opened");
-exit(0);
-}
+  while (alpha == 'Y') {
+    printf("\n Enter Employee details : ");
+    scanf("%s%d%d", e.name, &e.age, &e.salary);
+    fflush(stdin);
+    fwrite(&e, sizeof(e), 1, pt);
 
-while (alpha=='Y')
-{
-printf("\n Enter Employee details : ");
-scanf("%s%d%d",e.name,&e.age,&e.salary); 
-fflush(stdin);
-fwrite(&e,sizeof(e),1,pt);
+    puts(" Other records (Y/N): ");
+    alpha = getchar();
+  }
 
-puts(" Other records (Y/N): ");
-alpha=getchar();
-
-}
-
-fclose(pt);
+  fclose(pt);
 }

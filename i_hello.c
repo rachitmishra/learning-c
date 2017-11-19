@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-int main(int argc, char **argv)
-{
-	printf("hello world\n");
-	return 0;
+void printer(/* arguments */) { printf("hello world\n"); }
+
+int main(int argc, char **argv) {
+  printer();
+  return 0;
 }

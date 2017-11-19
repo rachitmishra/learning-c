@@ -1,24 +1,21 @@
 /*Calculating Words Of A string*/
 
+#include <stdio.h>
 
-
-# include<stdio.h>
-
- main()
+main()
 
 {
 
-char str[100];
-puts("Enter Your String :");
-gets(str);
+  char str[100];
+  puts("Enter Your String :");
+  gets(str);
 
-int i=0,word=1;
-while(str[i]!='\0')
-{
-if(str[i]==' ')
-word++;
+  int i = 0, word = 1;
+  while (str[i] != '\0') {
+    if (str[i] == ' ')
+      word++;
 
-i++;
-}
-printf("%d",word);
+    i++;
+  }
+  printf("%d", word);
 }

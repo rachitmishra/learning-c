@@ -1,24 +1,22 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int factorial (int );
-main( )
+int factorial(int);
+main()
 
 {
 
-int n,store;
+  int n, store;
 
-puts("Enter Your Number :  ");
-scanf("%d",&n);
+  puts("Enter Your Number :  ");
+  scanf("%d", &n);
 
-store=factorial(n);
-printf("%d",store);
-
+  store = factorial(n);
+  printf("%d", store);
 }
 
-int factorial (int x)
-{
-if ( x==1 )
-	return(1);
-else 
-  return x*factorial ( x-- );
+int factorial(int x) {
+  if (x == 1)
+    return (1);
+  else
+    return x * factorial(x--);
 }
