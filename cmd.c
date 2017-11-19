@@ -1,7 +1,10 @@
 #include <stdio.h>
 
-int add(int, int);
+int sum(int, int);
 
-int main(int argc, char *argv[]) { printf("%s", sum(argv[1], argv[2])); }
+int main(int argc, char *argv[]) {
+  printf("%d", sum((int)argv[1], (int)argv[2]));
+  return 0;
+}
 
-sum(int a, int b) { return a + b; }
+int sum(int a, int b) { return a + b; }
