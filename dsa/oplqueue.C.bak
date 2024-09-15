@@ -1,0 +1,69 @@
+#include<stdio.h>
+//#include<conio.h> // Header files to be used.
+#include<stdlib.h>
+
+typedef struct tnode // typedef is used for defining a new datatype i.e user 
+					 //	defined datatype for a system defined or predefined datatype.
+	{				 // a structure is created here which contains the info. about the Nodes.
+	int data;		 // data is declared as to store our data.
+	struct tnode *next; // the next pointer stores the address of next adjacent Node.
+	} Node;
+Node *push(Node *,int );  // Function protypes.
+Node   *pop(Node *);
+void *traverse(Node *);
+
+main()
+{
+
+Node *Top= NULL;
+int num;
+puts("\nEnter the data: ");
+scanf("%d",&num);				
+Top= push(Top);
+}
+
+puts("\nList contents are : "); //Printing or traversing the list.(Traversing=sequential travelling.)
+traverse(Top);				//Print function is called as to print the list.
+puts("\n");
+printf("\nThe Popped Element is :%d:" pop()); 	
+traverse(Top);
+puts("\n");
+
+Node *push(Node *toss,int x)		 // Stack Push
+
+		Node *new,*p;
+
+		p=(Node *)malloc(sizeof(Node));
+		p->data=x;
+		p->next=Top;
+		Top=p;
+		return(p);
+
+	}
+
+void pop(Node *tos)				//Stack Pop
+	{ 
+
+		Node *temp;
+		if(tos==NULL)
+		{
+			puts("\nStack Is Empty");
+		}
+		else
+		{		temp= tos;
+				tos=tos->next;
+				printf("The Popped Element is : %d",temp->data");
+				free(temp);
+				
+		}
+	}
+
+void traverse(Node *tos)
+{
+Node *temp;
+		if(tos==NULL)
+		{
+			puts("\nStack Is Empty");
+		}
+	
+	while(

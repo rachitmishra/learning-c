@@ -1,0 +1,98 @@
+#include<stdio.h>
+//#include<conio.h> // Header files to be used.
+#include<stdlib.h>
+
+typedef struct tnode // typedef is used for defining a new datatype i.e user 
+					 //	defined datatype for a system defined or predefined datatype.
+	{				 // a structure is created here which contains the info. about the Nodes.
+	int data;		 // data is declared as to store our data.
+	struct tnode *next; // the next pointer stores the address of next adjacent Node.
+	} Node;
+Node *push(Node *,int );  // Function protypes.
+Node   *pop(Node *);
+void *traverse(Node *);
+
+main()
+{
+Node *Top= NULL;
+int num,choice;
+char ch;
+do
+{
+
+printf("\n1.PUSH");
+printf("\n2.POP");
+printf("\n3.Traverse");
+printf("\nEnter Your CHoice : ");
+scanf("%d",&choice);
+
+switch(choice)
+{
+case 1:	puts("\nEnter the data: ");
+				scanf("%d",&num);				
+				Top= push(Top,num);
+				break;
+case 2:	puts("\n");
+				printf("\nThe Popped Element is :%d:" ,pop(Top)); 	;
+				break; 
+case 3: 	puts("The Stack COntents are ");
+				traverse(Top);
+				puts("\n");
+
+
+default:puts("\nErrorr");
+}
+fflush(stdin);
+puts("\nCOntinue (Y/N) : ");
+scanf("%c",&ch);
+
+}while(ch=='Y'||ch=='y');
+
+}
+
+
+		
+Node *push(Node *tos,int x)		 // Stack Push
+	{
+		Node *new,*p;
+
+		p=(Node *)malloc(sizeof(Node));
+		p->data=x;
+		p->next=tos;
+		tos=p;
+		return(p);
+
+	}
+
+Node *pop(Node *tos)				//Stack Pop
+	{ 
+
+		Node *temp;
+		if(tos==NULL)
+		{
+			puts("\nStack Is Empty");
+		}
+		else
+		{		temp= tos;
+				tos=tos->next;
+				printf("The Popped Element is : %d",temp->data);
+				free(temp);
+				
+		}
+	}
+
+void traverse(Node *tos)
+{
+Node *temp;
+		if(tos==NULL)
+		{
+			puts("\nStack Is Empty");
+		}
+	
+	while(tos!=NULL)
+	{
+	printf("%d",tos->data);
+	tos=tos->next;
+	}
+	
+	}
